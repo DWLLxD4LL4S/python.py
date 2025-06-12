@@ -14,7 +14,3 @@ for subdominio in subdominios:
                         print(sub_alvo, "->", info)
         except:
                 pass
-
-# Comando pra teste automatico de subdominios.
-# Colocar dominio em alvo = "".
-# Colocar o caminho da wordlist desejada em "caminho da wordlist". 
