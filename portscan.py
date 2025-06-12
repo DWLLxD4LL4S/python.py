@@ -10,6 +10,3 @@ for port in ports:
                 print(port, "OPEN")
 
 
-# Comando simples pra testar quais portas o dominio em questao esta rodando.
-# Apenas colocar domino desejado em "dominio".
-# Diminuir ou aumentar as opcoes de ports e opcional.                                               
