@@ -1,12 +1,16 @@
 import socket
 
-ports = [20,21,22,25,53,80,123,179,443,445,500,587,3306,3389] 
-
-for port in ports:
-        client = socket.socket(socket.AF_INET, socket.SOCK_STEAM)
-        client.settimout(0.1)
-        code = client.connect_ex(("dominio", port))
+# Loop de 1 a 99999
+for port in range(1, 100000):
+    try:
+        client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        client.settimeout(0.1)
+        code = client.connect_ex(("dominio.com", port))  # substitua "dominio.com" pelo IP ou domínio desejado
         if code == 0:
-                print(port, "OPEN")
-
-
+            print(port, "OPEN")
+        client.close()
+    except KeyboardInterrupt:
+        print("\nScan interrompido pelo usuário.")
+        break
+    except Exception as e:
+        pass  # opcional: print(f"Erro na porta {port}: {e}")
